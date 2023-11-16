@@ -37,7 +37,7 @@ body{
 
 /*Start hero <section> is 2*/
 #hero{
-    background-image: url("../img/hero4.png");
+    background-image: url("../images/hero4.png");
     height: 90vh;
     width: 100%;
     background-size: cover;
