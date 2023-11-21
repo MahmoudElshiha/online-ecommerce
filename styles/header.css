@@ -46,4 +46,10 @@
     bottom: -4px;
     left: 20px;
 }
+
+#user-circle{
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /*End header */
