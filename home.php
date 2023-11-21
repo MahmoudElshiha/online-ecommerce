@@ -410,7 +410,7 @@
   <?php include "./templates/footer.php" ?>
   <!-- Footer end -->
 
-  <script src="./scripts/script.js"></script>
+  <!-- Start in video 1 of -- 1:37:23 -->
 </body>
 
 </html>

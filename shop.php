@@ -14,9 +14,9 @@
 
     <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
 
 </head>
