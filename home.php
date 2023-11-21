@@ -14,9 +14,9 @@
 
   <title> E-commerce Website</title>
 
-  <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/header.css" />
   <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 
 
 </head>
@@ -410,7 +410,7 @@
   <?php include "./templates/footer.php" ?>
   <!-- Footer end -->
 
-  <!-- Start in video 1 of -- 1:37:23 -->
+  <script src="./scripts/script.js"></script>
 </body>
 
 </html>

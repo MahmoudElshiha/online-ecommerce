@@ -46,4 +46,14 @@
     bottom: -4px;
     left: 20px;
 }
+#mobile{
+    display: none;
+    align-items: center;
+}
+#bar{
+    cursor: pointer;
+}
+#close{
+    display: none;
+}
 /*End header */
