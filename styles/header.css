@@ -46,6 +46,7 @@
     bottom: -4px;
     left: 20px;
 }
+<<<<<<< HEAD
 #mobile{
     display: none;
     align-items: center;
@@ -56,4 +57,12 @@
 #close{
     display: none;
 }
+=======
+
+#user-circle{
+    font-size: 24px;
+    cursor: pointer;
+}
+
+>>>>>>> 5fb3293c00a869d681d7cf25130baf51122d31f3
 /*End header */
