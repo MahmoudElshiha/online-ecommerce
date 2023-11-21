@@ -407,6 +407,113 @@ justify-content: space-between; flex-wrap: wrap;
 /* End #newsletter */
 
 
+
+/* shop page */
+
+/* Start page-header */
+
+#page-header{
+    background-image: url("../images/banner/b1.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#page-header h2,
+#page-header p{
+    color: #fff;
+}
+
+#pagination{
+    text-align: center;
+}
+
+#pagination a{
+    text-decoration: none;
+    background-color: #088178;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#pagination a i{
+    font-size: 16px;
+    font-weight: 600;
+}
+/* End page-header */
+
+
+
+/*sproduct page*/
+
+/* Single product */
+/* Start prodetails */
+
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+}
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+#prodetails .single-pro-detalis{
+    width: 50%;
+    padding-top: 30px;
+}
+#prodetails .single-pro-detalis h4{
+    padding: 40px 0 20px 0;
+}
+#prodetails .single-pro-detalis h2{
+    font-size: 26px;
+}
+#prodetails .single-pro-detalis select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-detalis input{
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+#prodetails .single-pro-detalis input:focus{
+    outline: none;
+}
+
+#prodetails .single-pro-detalis button{
+    background: #088178;
+    color: #fff;
+}
+#prodetails .single-pro-detalis span {
+    line-height: 25px;
+}
+
+
+
+
+
+
+
+
+
 /*contact page*/
 
 #contact-details{
