@@ -42,7 +42,7 @@
             <input type="submit" value="Register Now">
             <hr>
             <p>-- Already have an account?</p>
-            <a href="./user_register.php" class="option-btn">Login Now</a>
+            <a href="./user_login.php" class="option-btn">Login Now</a>
         </form>
     </section>
 
