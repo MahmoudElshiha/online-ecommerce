@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Comatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E commerce</title>
-    
+
     <!-- font awwsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- font awwsome CDN -->
-    
+
     <title> E-commerce Website</title>
-    
+
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
-    
-    
-    </head>
+
+
+</head>
+
 <body>
-<?php
-  include "./templates/header.php";
-  head("contact");
-  ?>
+    <?php
+    include "./templates/header.php";
+    head("contact");
+    ?>
     <section id="page-heder" class="about-header">
         <h2>#let's_talk</h2>
         <p>LEAVE A MASSAGE, We love to hear from you!</p>
@@ -35,24 +37,24 @@
             <h3>Head Office</h3>
             <div>
                 <li>
-                    <i class="fal fa-map"></i>
+                    <i class="fa fa-map"></i>
                     <p> Damitta_New-Damitta</p>
-                    
+
                 </li>
                 <li>
-                    <i class="fal fa-envelope"></i>
+                    <i class="fa fa-envelope"></i>
                     <p>abdsalama2020@gmail.com</p>
-                    
+
                 </li>
                 <li>
-                    <i class="fal fa-phone-alt"></i>
+                    <i class="fa fa-phone-alt"></i>
                     <p>+201097226802</p>
-                    
+
                 </li>
                 <li>
-                    <i class="fal fa-clock"></i>
+                    <i class="fa fa-clock"></i>
                     <p>10:00 -18:00, Sat - Thrus</p>
-                    
+
                 </li>
             </div>
         </div>
@@ -72,12 +74,13 @@
         </form>
         <div class="people">
             <div>
+                <img src="images/people/2.png" alt="">
+                <p><span>Mahmmoud Elshiha</span>Senior Team Leader <br> phone: +201010580430 <br>E-mail: MahmmoudElsheiha@gmail.com</p>
+            </div>
+
+            <div>
                 <img src="images/people/1.png" alt="">
                 <p><span>Abdo Eltahrany</span>Senior Marketing Manger <br> phone: +201097226802 <br>E-mail: abdsalama2020@gmail.com</p>
-            </div>
-            <div>
-                <img src="images/people/2.png" alt="">
-                <p><span>Mahmmoud Elsheiha</span>Senior Marketing Manger <br> phone: +201010580430 <br>E-mail: mahmmoud_elsheiha@gmail.com</p>
             </div>
             <div>
                 <img src="images/people/3.png" alt="">
@@ -90,22 +93,23 @@
         </div>
     </section>
 
-    
 
 
-<section id="newsletter" class="section-p1 section-m1">
-    <div class="newstext">
-        <h4>Sign Up For newsletter</h4>
-        <p>
-        Get E-mail updates about our lestest shop and
-        <span>special offers.</span>
-        </p>
-    </div>
-    <div class="form">
-        <input type="text" placeholder="Your email address" />
-        <button class="normal">Sign Up</button>
-    </div>
-</section>
-<?php include "./templates/footer.php" ?>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For newsletter</h4>
+            <p>
+                Get E-mail updates about our lestest shop and
+                <span>special offers.</span>
+            </p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address" />
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+    <?php include "./templates/footer.php" ?>
 </body>
+
 </html>
