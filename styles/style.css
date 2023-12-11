@@ -173,6 +173,11 @@ body {
   margin: 15px 0;
   transition: 0.2s ease;
 }
+#product1 .pro button {
+  background-color: #088178;
+  color: #fff;
+}
+
 #product1 .pro:hover {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
 }
@@ -789,6 +794,7 @@ body {
 /* end Contact */
 
 .profile {
+  min-width: 250px;
   position: absolute;
   right: 2rem;
   top: 120%;
@@ -797,6 +803,9 @@ body {
   border-radius: 15px;
   box-shadow: 0px 0px 20px #088178;
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile p {
@@ -806,5 +815,21 @@ body {
 }
 
 .show {
-  display: block;
+  display: flex;
+}
+
+.logout {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  color: #fff;
+  background-color: #e81123;
+  box-shadow: 0px 0px 15px red;
 }
