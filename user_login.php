@@ -14,10 +14,10 @@
 
     <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
-    <link rel="stylesheet" href="./styles/form.css" />
+    <link rel="stylesheet" href="./styles/style_sign_log.css"/>
+
 
 
 </head>
@@ -31,19 +31,28 @@
     <!-- header end -->
 
     <!-- login Form Strat -->
-    <section class="form-container">
-
-        <h2> <i class="fa-solid fa-user"></i> User Login </h2> <br>
-        <form>
-            <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required maxlength="50">
-            <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required maxlength="20">
-
-            <input type="submit" value="Login">
-            <hr>
-            <p>-- don't have an account?</p>
-            <a href="./user_register.php" class="option-btn">register now</a>
-        </form>
-    </section>
+    <div class="wrapper">
+			<div class="inner">
+				<div class="image-holder">
+                    <img src="images/photo_sign_log.jpg" alt="">
+				</div>
+				<form action="">
+					<h3>LOG IN</h3>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Email Address" class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<button class="button-style-sign-log">LOG IN</button>
+					<hr>
+					<div class = "register-sign-log">
+					<p>don't have an account?</p>
+					<button class="button-style-sign-log"><a href="./user_register.php" class="herf-style">SIGN UP Now</a></button>
+			    	</div>
+				</form>
+			</div>
+	</div>
 
     <!-- login Form End -->
 
