@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/style_sign_log.css"/>
+	<link rel="stylesheet" href="./styles/style.css" />
 
 
 
@@ -45,9 +46,10 @@
 						<input type="password" placeholder="Password" class="form-control">
 					</div>
 					<button class="button-style-sign-log">LOG IN</button>
+					<br>
 					<hr>
 					<div class = "register-sign-log">
-					<p>don't have an account?</p>
+					<h6>don't have an account?</h6>
 					<button class="button-style-sign-log"><a href="./user_register.php" class="herf-style">SIGN UP Now</a></button>
 			    	</div>
 				</form>
