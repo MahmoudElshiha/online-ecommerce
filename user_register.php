@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+// if user already signed in return to home page
+if (isset($_SESSION['username'])) {
+    header("Location: ../home.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +25,9 @@
 
     <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/form.css" />
 
 
@@ -34,7 +45,9 @@
     <section class="form-container">
 
         <h2> <i class="fa-solid fa-user-plus"></i> Register Now </h2> <br>
-        <form>
+
+        <!-- onsubmit action to validate the form before submit  -->
+        <form action="./functions/newUser.php" onsubmit="return user_register()">
             <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required maxlength="50">
             <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required maxlength="20">
             <input type="password" name="re-password" id="re-password" placeholder="Enter Your Password Again ..." required maxlength="20">
@@ -53,6 +66,9 @@
     include "./templates/footer.php";
     ?>
     <!-- footer end -->
+
+    <!-- incude JS code -->
+    <script src="./scripts/validate.js"></script>
 
 </body>
 

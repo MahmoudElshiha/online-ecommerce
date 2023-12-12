@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// if user already signed in return to home page
+if (isset($_SESSION['username'])) {
+    header("Location: ../home.php");
+    exit();
+}
+//  else {
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +28,9 @@
 
     <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/form.css" />
 
 
@@ -34,9 +48,9 @@
     <section class="form-container">
 
         <h2> <i class="fa-solid fa-user"></i> User Login </h2> <br>
-        <form>
-            <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required maxlength="50">
-            <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required maxlength="20">
+        <form action="./functions/login.php">
+            <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required>
+            <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required>
 
             <input type="submit" value="Login">
             <hr>
@@ -56,3 +70,10 @@
 </body>
 
 </html>
+
+<?php
+
+// $on = 7;
+// }
+
+?>
