@@ -3,10 +3,16 @@ session_start();
 
 // if user already signed in return to home page
 if (isset($_SESSION['username'])) {
-    header("Location: ../home.php");
+    header("Location: ./home.php");
     exit();
 }
-//  else {
+
+if (isset($_GET['error'])) {
+    $error = 1;
+} else {
+    $error = 0;
+}
+
 
 
 
@@ -31,7 +37,8 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/form.css" />
+    <link rel="stylesheet" href="./styles/style_sign_log.css" />
+
 
 
 </head>
@@ -40,24 +47,54 @@ if (isset($_SESSION['username'])) {
     <!-- header start -->
     <?php
     include "./templates/header.php";
-    head("home");
+    head("profile");
     ?>
     <!-- header end -->
 
     <!-- login Form Strat -->
-    <section class="form-container">
+    <div class="wrapper">
 
-        <h2> <i class="fa-solid fa-user"></i> User Login </h2> <br>
-        <form action="./functions/login.php">
-            <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required>
-            <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required>
+        <div class="inner">
+            <div class="image-holder">
+                <img src="./images/photo_sign_log.jpg" alt="">
+            </div>
+            <form action="./functions/login.php" onsubmit="user_register()">
+                <h3>Login Form</h3><br>
 
-            <input type="submit" value="Login">
-            <hr>
-            <p>-- don't have an account?</p>
-            <a href="./user_register.php" class="option-btn">register now</a>
-        </form>
-    </section>
+                <div class="<?php if ($error) {
+                                echo 'show';
+                            } else {
+                                echo "hide";
+                            } ?>">
+                    <p class="error"> يرجي التاكد من صحة البيانات </p>
+                </div>
+
+
+                <div class="form-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Username  (try : admin )" class="form-control" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Password  (try : 1234 )" class="form-control" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button type="submit" class="button-style-sign-log">Login
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <br>
+                <hr>
+                <br>
+
+                <p> -- Doesn't have an account ?</p>
+                <a href="./user_register.php" style="all: unset;">
+                    <button type="button" class="button-style-sign-log" style="background-color: #088178;">Register
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </a>
+            </form>
+        </div>
+    </div>
 
     <!-- login Form End -->
 
@@ -66,6 +103,9 @@ if (isset($_SESSION['username'])) {
     include "./templates/footer.php";
     ?>
     <!-- footer end -->
+
+    <!-- validate form with JS -->
+    <script src="./scripts/validate.js"></script>
 
 </body>
 

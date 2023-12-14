@@ -1,5 +1,8 @@
 # WebProject
 
-## Resources 
+## The TEAM
 
-*Youtube Video : https://youtu.be/P8YuWEkTeuE?si=7sQw5yctRv1flJjK
+Mahmoud Elshiha
+Ahmed Elkhamesy
+Abdo Elthrany
+Osama Elkayal

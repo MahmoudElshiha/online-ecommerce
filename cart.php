@@ -1,3 +1,33 @@
+<?php
+// start the session
+session_start();
+
+// if user already signed in return to home page
+if (!isset($_SESSION['username'])) {
+    header("Location: ./user_login.php");
+    exit();
+}
+
+// function to get elements from the database
+include "./functions/sql_to_array.php";
+$user_id = $_SESSION['id'];
+
+$sql = "SELECT 
+            cart.element_id,
+            cart.product_id,
+            products.product_image,
+            products.product_name,
+            products.product_price,
+            cart.amount
+        FROM cart
+            LEFT JOIN products ON products.product_id = cart.product_id
+        ";
+
+$result = sql_to_array($sql);
+// print_r($result);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +44,9 @@
 
     <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
 
 </head>
@@ -24,11 +54,11 @@
 <body>
     <?php
     include "./templates/header.php";
-    head("contact");
+    head("cart");
     ?>
     <section id="page-heder" class="about-header">
-        <h2>#let's_talk</h2>
-        <p>LEAVE A MASSAGE, We love to hear from you!</p>
+        <h2>#cart</h2>
+        <p>Add your coupon code & Save up to 70%!</p>
     </section>
 
     <section id="cart" class="section-p1">
@@ -43,15 +73,8 @@
                     <td>Subtotal</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="images/products/f1.jpg" alt=""></td>
-                    <td>Catoon Astronaut T-shirts</td>
-                    <td>$118</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118</td>
-                </tr>
+            <tbody id="tableBody">
+                <!-- 
                 <tr>
                     <td><a href="#"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="images/products/f2.jpg" alt=""></td>
@@ -68,25 +91,19 @@
                     <td><input type="number" value="1"></td>
                     <td>$118</td>
                 </tr>
+             -->
             </tbody>
         </table>
     </section>
 
-    <section id="cart-add" class="section-p1">
-        <div id="coupon">
-            <h3>Apply Coupon</h3>
-            <div>
-                <input type="text" placeholder="Enter Your Coupon">
-                <button class="normal">Apply</button>
-            </div>
-        </div>
+    <section id="cart-add" class="section-p1" style="justify-content: flex-end;">
 
         <div id="subtotal">
             <h3>Cart Totals</h3>
             <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>335$</td>
+                    <td id='subtotal_label'>0</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -94,15 +111,27 @@
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>335$</strong></td>
+                    <td><strong id='total_label'>0</strong></td>
                 </tr>
             </table>
-            <button class="normal">Proceed to chickout</button>
+            <a href="./functions/empty_cart.php"><button class="normal">Proceed to chickout</button></a>
         </div>
     </section>
 
 
     <?php include "./templates/footer.php" ?>
+
+    <!-- JS script start -->
+    <script src="./scripts/cart.js"></script>
+
+    <script>
+        const arrary = <?php echo json_encode($result); ?>;
+        const tableBody = document.getElementById("tableBody");
+        buildCart(arrary, tableBody);
+    </script>
+
+    <!-- JS script end   -->
+
 </body>
 
 </html>

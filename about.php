@@ -1,3 +1,7 @@
+<?php
+// start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +53,6 @@
     </div>
 
   </section>
-  <!-- <section id="about-app" class="section-p1">
-        <h1>Download Our <a href="#">App</a> </h1>
-        <div class="video">
-            <video autoplay muted loop src="images/about/1.mp4"></video>
-        </div>
-    </section> -->
   <section id="feature" class="section-p1">
     <div class="fe-box">
       <img src="./images/features/f1.png" alt="" />

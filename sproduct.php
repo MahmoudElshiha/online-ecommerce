@@ -1,157 +1,142 @@
+<?php
+// start the session
+session_start();
+
+// function to get elements from the database
+include "./functions/sql_to_array.php";
+
+$product_id = $_GET['product_id'];
+$sql = "SELECT * FROM products WHERE product_id = $product_id";
+$result = sql_to_array($sql);
+$product = $result[0];
+// print_r($product);
+
+
+if (isset($_GET['error'])) {
+  $error = 1;
+} else {
+  $error = 0;
+}
+
+
+
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Comatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E commerce</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Comatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E commerce</title>
 
-    <!-- font awwsome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- font awwsome CDN -->
+  <!-- font awwsome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font awwsome CDN -->
 
-    <title> E-commerce Website</title>
+  <title> E-commerce Website</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 
 
 </head>
 
 <body>
-    <!-- header start -->
-    <?php
-    include "./templates/header.php";
-    head("sproduct");
-    ?>
-    <!-- header end -->
+  <!-- header start -->
+  <?php
+  include "./templates/header.php";
+  head("shop");
+  ?>
+  <!-- header end -->
 
 
-    <!-- prodetails start -->
+  <!-- prodetails start -->
 
-    <section id="prodetails" class="section-p1">
-      <div class="single-pro-image">
-        <img src="images/products/f1.jpg" width="100%" id="MainImg" alt="">
+  <section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+      <img src="<?php echo $product['product_image']; ?>" width="100%" id="MainImg" alt="">
+    </div>
 
-        <div class="small-img-group">
+    <form action="./functions/add_cart.php" class="single-pro-detalis">
 
-          <div class="small-img-col">
-            <img src="images/products/f1.jpg" width="100%" class="small-img" alt="">
-          </div>
-          <div class="small-img-col">
-            <img src="images/products/f2.jpg" width="100%" class="small-img" alt="">
-          </div>
-          <div class="small-img-col">
-            <img src="images/products/f3.jpg" width="100%" class="small-img" alt="">
-          </div>
-          <div class="small-img-col">
-            <img src="images/products/f4.jpg" width="100%" class="small-img" alt="">
-          </div>
-
-        </div>
-
+      <div class="<?php if ($error) {
+                    echo 'show';
+                  } else {
+                    echo "hide";
+                  } ?>">
+        <p class="error"> يرجي تسجيل الدخول اولاً </p>
       </div>
 
-      <div class="single-pro-detalis">
-        <h6>Home / T-shirt</h6>
-        <h4>Man's Fashion T-shirt</h4>
-        <h2>$139,00</h2>
-        <select>
-          <option>Select Size</option>
-          <option>Xl</option>
-          <option>XXL</option>
-          <option>Small</option>
-          <option>Large</option>
-        </select>
-          <input type="number" value="1">
-          <button id="normal">Add To Cart</button>
-          <h4>Product Details</h4>
-          <span>The Gilden Ultra Cotton T-shirt is made from a substantial 6.0 oz. per
-          sq. yd. fabric constructed from 100% cotton , this classic fit preshrunk jersey 
-          knit provides unmatched comfort with each wear. Featuring a taped neck and 
-          shoulder, and a seamless double-needle coller, and avilable in a range of 
-          colors, it offers it all in the ultimate head-turning package.</span> 
+      <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+      <h4><?php echo $product['product_name']; ?></h4>
+      <h2>$<?php echo $product['product_price']; ?></h2>
+      <input type="number" value="1" name="amount">
+      <button type="submit" class="normal">Add To Cart</button>
+      <h4>Product Details</h4>
+      <span> <?php echo $product['product_details']; ?></span>
       </div>
-    </section>
+  </section>
 
-    <!-- prodetails End -->
-  <!-- new arrivals start -->
+  <!-- prodetails End -->
+
+  <!-- product1 start -->
   <section id="product1" class="section-p1">
     <h2>Featured Products</h2>
     <p>Summer Collection New Morden Design</p>
     <div class="pro-container">
-      <div class="pro">
-        <img src="./images/products/n1.jpg" alt="" />
-        <div class="des">
-          <span>adidas</span>
-          <h5>Cartoon Astronaut T-Shirts</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+
+      <?php
+      // function to get elements from the database
+
+
+      // all products
+      $sql2 = "SELECT * FROM products ORDER BY product_id DESC LIMIT 8 ";
+      $all_products = sql_to_array($sql2);
+
+      foreach ($all_products as $row) {
+        $product_id = $row['product_id'];
+      ?>
+        <div class="pro">
+          <img src="<?php echo $row['product_image']; ?>" alt="" />
+
+          <div class="des">
+            <h5><?php echo $row['product_name']; ?> </h5>
+            <div class="star">
+              <?php
+              $stars =  $row['product_stars'];
+              $off_stars = 5 - $stars;
+
+              for ($i = 0; $i < $stars; $i++) {
+                echo '<i class="fas fa-star"></i>';
+              }
+
+              for ($i = 0; $i < $off_stars; $i++) {
+                echo '<i class="fa-regular fa-star"></i>';
+              }
+              ?>
+            </div>
+            <h4>
+              $<?php echo $row['product_price']; ?>
+            </h4>
           </div>
-          <h4>$78</h4>
+          <a href="./sproduct.php?product_id=<?php echo $product_id; ?>">
+            <button type="button" class="normal">
+              Add To Cart
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </a>
         </div>
-        <a href="#"><i class="fal fa-shoping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./images/products/n2.jpg" alt="" />
-        <div class="des">
-          <span>adidas</span>
-          <h5>Cartoon Astronaut T-Shirts</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>$78</h4>
-        </div>
-        <a href="#"><i class="fal fa-shoping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./images/products/n3.jpg" alt="" />
-        <div class="des">
-          <span>adidas</span>
-          <h5>Cartoon Astronaut T-Shirts</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>$78</h4>
-        </div>
-        <a href="#"><i class="fal fa-shoping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="./images/products/n4.jpg" alt="" />
-        <div class="des">
-          <span>adidas</span>
-          <h5>Cartoon Astronaut T-Shirts</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>$78</h4>
-        </div>
-        <a href="#"><i class="fal fa-shoping-cart cart"></i></a>
-      </div>
-        <a href="#"><i class="fal fa-shoping-cart cart"></i></a>
-      </div>
+      <?php
+      }
+      ?>
+
     </div>
   </section>
-  <!-- new arrivals end -->
+  <!-- product1 end -->
 
   <!-- newsletter start -->
 
@@ -172,36 +157,11 @@
   <!-- newsletter End -->
 
 
-    <!-- Footer start -->
-    <?php include "./templates/footer.php" ?>
-    <!-- Footer end -->
+  <!-- Footer start -->
+  <?php include "./templates/footer.php" ?>
+  <!-- Footer end -->
 
 
-    <!-- start video 2 of 27:20 -->
-
-  <!-- الجزء ده مش شغال مش عارف ليه (-_-) -->
-
-  <!-- Java script -->
-    <script>
-      var MainImg = decument.getElementById("MainImg");
-      var smalling = decument.getElementByclassName("small-img");
-
-      smalling[0].onclick = function(){
-        MainImg.src = smalling[0].src;
-      }
-      smalling[1].onclick = function(){
-        MainImg.src = smalling[1].src;
-      }
-      smalling[2].onclick = function(){
-        MainImg.src = smalling[2].src;
-      }
-      smalling[3].onclick = function(){
-        MainImg.src = smalling[3].src;
-      }
-    </script>
-   
-
-     <!-- start video 2 of 31:18 -->
 
 
 </body>

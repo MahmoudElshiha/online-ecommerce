@@ -1,0 +1,172 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font-family: "Poppins-Regular";
+  color: #333;
+  font-size: 13px;
+}
+
+p,
+h3 {
+  margin: 0;
+}
+
+img {
+  max-width: 80%;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  /* background-image: url("../images/photo_sign_log.jpg"); */
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  border: 10px double #666;
+  border-radius: 25px;
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  max-width: 750px;
+  margin: auto;
+  display: flex;
+}
+.inner .image-holder {
+  border-right: 1px solid;
+  width: 83%;
+}
+.inner form {
+  width: 65%;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.inner h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: "Poppins-SemiBold";
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.form-wrapper {
+  position: relative;
+}
+.form-wrapper i {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+.form-control {
+  border: 1px solid #333;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-control::placeholder {
+  font-size: 13px;
+  color: #333;
+  font-family: "Poppins-Regular";
+}
+.form-control::-moz-placeholder {
+  font-size: 13px;
+  color: #333;
+  font-family: "Poppins-Regular";
+}
+.form-control:-ms-input-placeholder {
+  font-size: 13px;
+  color: #333;
+  font-family: "Poppins-Regular";
+}
+.form-control:-moz-placeholder {
+  font-size: 13px;
+  color: #333;
+  font-family: "Poppins-Regular";
+}
+.register-sign-log {
+  font-size: 20px;
+  color: #fff;
+}
+.herf-style {
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-style-sign-log {
+  border: none;
+  width: 164px;
+  height: 51px;
+  margin: auto;
+  margin-top: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #1a1a1a;
+  font-size: 20px;
+  color: #fff;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+}
+
+.button-style-sign-log i {
+  position: relative;
+  right: -20px;
+}
+
+.button-style-sign-log:hover i {
+  animation: move-arrow 1s ease;
+}
+
+@keyframes move-arrow {
+  0% {
+    translate: 0px;
+  }
+
+  10% {
+    translate: -20px;
+  }
+
+  20% {
+    translate: 0;
+  }
+
+  40% {
+    translate: -15px;
+  }
+
+  60% {
+    translate: 0;
+  }
+
+  80% {
+    translate: -10px;
+  }
+
+  100% {
+    background: 0;
+  }
+}

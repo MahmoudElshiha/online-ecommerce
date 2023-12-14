@@ -62,7 +62,7 @@ body {
 
 /*Start hero <section> is 2*/
 #hero {
-  background-image: url("../images/hero4.png");
+  background-image: url("../images/hero4.jpg");
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -74,18 +74,23 @@ body {
   justify-content: center;
 }
 
-#hero h4 {
+#hero h4,
+#hero p {
   padding-bottom: 15px;
+  color: #ccc;
 }
 
 #hero h1 {
-  color: #088178;
+  color: #fff;
+}
+#hero h2 {
+  color: #000;
 }
 
 #hero button {
   background-image: url("../images/button.png");
   background-color: transparent;
-  color: #088178;
+  color: #fff;
   border: 0;
   margin-top: 15px;
   padding: 14px 80px 14px 65px;
@@ -163,6 +168,9 @@ body {
   flex-wrap: wrap;
 }
 #product1 .pro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
@@ -184,6 +192,10 @@ body {
 #product1 .pro img {
   width: 100%;
   border-radius: 20px;
+  height: -webkit-fill-available;
+  object-fit: cover;
+  border-right: 10px groove;
+  max-height: 275px;
 }
 #product1 .pro .des {
   text-align: start;
@@ -675,18 +687,6 @@ body {
   text-align: center;
 }
 
-#about-app .video {
-  width: 70%;
-  height: 100%;
-  margin: 30px auto 0 auto;
-}
-
-#about-app .video video {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
 /*end about*/
 
 /*contact page*/
@@ -817,6 +817,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.profile * {
+  width: 100%;
+}
 
 .profile p {
   color: white;
@@ -939,4 +942,47 @@ body {
   border: 1px solid #e2e9e1;
   padding: 10px;
   font-size: 13px;
+}
+
+.hide {
+  display: none;
+}
+.error {
+  width: 100%;
+  text-align: center;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right .image-holder {
+  border-right: 0;
+}
+.right input {
+  margin: 30px;
+  padding: 10px;
+}
+
+.right .image-holder img {
+  cursor: pointer;
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+.left {
+  border-right: 1px solid;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }

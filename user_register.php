@@ -1,12 +1,15 @@
 <?php
-
 session_start();
 
 // if user already signed in return to home page
 if (isset($_SESSION['username'])) {
-    header("Location: ../home.php");
+    header("Location: ./home.php");
     exit();
 }
+//  else {
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +31,8 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/form.css" />
+    <link rel="stylesheet" href="./styles/style_sign_log.css" />
+
 
 
 </head>
@@ -37,27 +41,58 @@ if (isset($_SESSION['username'])) {
     <!-- header start -->
     <?php
     include "./templates/header.php";
-    head("home");
+    head("profile");
     ?>
     <!-- header end -->
 
     <!-- login Form Strat -->
-    <section class="form-container">
+    <div class="wrapper">
 
-        <h2> <i class="fa-solid fa-user-plus"></i> Register Now </h2> <br>
+        <div class="inner">
+            <div class="image-holder">
+                <img src="./images/photo_sign_log.jpg" alt="">
+            </div>
+            <form action="./functions/newUser.php" onsubmit="return user_register()">
+                <h3>Registration Form</h3>
+                <br>
+                <div id="error" class="<?php if ($error) {
+                                            echo 'show';
+                                        } else {
+                                            echo "hide";
+                                        } ?>">
+                    <p class="error"> يرجي التاكد من صحة البيانات </p>
+                </div>
 
-        <!-- onsubmit action to validate the form before submit  -->
-        <form action="./functions/newUser.php" onsubmit="return user_register()">
-            <input type="text" name="username" id="username" placeholder="Enter Your User Name ..." required maxlength="50">
-            <input type="password" name="password" id="password" placeholder="Enter Your Password ..." required maxlength="20">
-            <input type="password" name="re-password" id="re-password" placeholder="Enter Your Password Again ..." required maxlength="20">
+                <div class="form-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Username" class="form-control" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input type="password" id="re-password" name="re-password" placeholder="Confirm Password" class="form-control" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <button class="button-style-sign-log">Register
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
 
-            <input type="submit" value="Register Now">
-            <hr>
-            <p>-- Already have an account?</p>
-            <a href="./user_login.php" class="option-btn">Login Now</a>
-        </form>
-    </section>
+                <br>
+                <hr>
+                <br>
+
+                <p> -- Already have an account ?</p>
+                <a href="./user_login.php" style="all: unset;">
+                    <button type="button" class="button-style-sign-log" style="background-color: #088178;">Login
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </a>
+
+            </form>
+        </div>
+    </div>
 
     <!-- login Form End -->
 
@@ -67,9 +102,16 @@ if (isset($_SESSION['username'])) {
     ?>
     <!-- footer end -->
 
-    <!-- incude JS code -->
+    <!-- validate form with JS -->
     <script src="./scripts/validate.js"></script>
 
 </body>
 
 </html>
+
+<?php
+
+// $on = 7;
+// }
+
+?>
