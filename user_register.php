@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
     header("Location: ./home.php");
     exit();
 }
-//  else {
 
 
 
@@ -32,6 +31,8 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/style_sign_log.css" />
+    <link rel="stylesheet" href="./styles/style_sign_log.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
 
 
@@ -49,29 +50,49 @@ if (isset($_SESSION['username'])) {
     <div class="wrapper">
         <div class="inner">
             <div class="image-holder">
-                <img src="images/photo_sign_log.jpg" alt="">
+                <img src="./images/photo_sign_log.jpg" alt="">
             </div>
-            <form action="">
-                <h3>SIGN UP</h3>
-                <div class="orm-groupf">
-                    <input type="text" placeholder="Full Name" class="form-control">
+            <form action="./functions/newUser.php" onsubmit="return user_register()">
+                <h3>Registration Form</h3>
+                <br>
+                <div id="error" class="<?php if ($error) {
+                                            echo 'show';
+                                        } else {
+                                            echo "hide";
+                                        } ?>">
+                    <p class="error"> يرجي التاكد من صحة البيانات </p>
+                </div>
+
+                <div class="form-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Username" class="form-control" required>
+                    <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="text" placeholder="Email Address" class="form-control">
+                    <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                    <i class="fa-solid fa-lock"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="password" id="re-password" name="re-password" placeholder="Confirm Password" class="form-control" required>
+                    <i class="fa-solid fa-lock"></i>
                 </div>
-                <button class="button-style-sign-log">SIGN UP</button>
+                <button class="button-style-sign-log">Register
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <br>
                 <hr>
-                <div class="register-sign-log">
-                    <p>Already have an account?</p>
-                    <button class="button-style-sign-log"><a href="./user_login.php" class="herf-style">LOG IN Now</a></button>
-                </div>
+                <br>
+
+                <p> -- Already have an account ?</p>
+                <a href="./user_login.php" style="all: unset;">
+                    <button type="button" class="button-style-sign-log" style="background-color: #088178;">Login
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </a>
+
             </form>
         </div>
     </div>
-    <!-- sign up Form End -->
 
     <!-- footer start -->
     <?php
@@ -88,7 +109,5 @@ if (isset($_SESSION['username'])) {
 
 <?php
 
-// $on = 7;
-// }
 
 ?>
