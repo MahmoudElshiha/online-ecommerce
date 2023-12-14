@@ -114,7 +114,7 @@ $result = sql_to_array($sql);
                     <td><strong id='total_label'>0</strong></td>
                 </tr>
             </table>
-            <a href="./functions/empty_cart.php"><button class="normal">Proceed to chickout</button></a>
+            <a href="./functions/empty_cart.php"><button class="normal">Proceed to checkout</button></a>
         </div>
     </section>
 

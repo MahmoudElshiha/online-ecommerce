@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2023 at 12:42 PM
+-- Generation Time: Dec 14, 2023 at 01:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `webproject`
+-- Database: `test123`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `products` (
   `product_price` int(11) NOT NULL,
   `product_image` varchar(1000) NOT NULL,
   `product_stars` int(11) NOT NULL,
-  `product_details` varchar(1000) NOT NULL DEFAULT 'Quis eiusmod in ut id in ipsum ipsum sit. Quis dolore commodo excepteur qui excepteur nulla cupidatat nulla do ex dolore ex. Culpa laboris ullamco do voluptate amet ipsum. Minim anim sunt mollit excepteur ex deserunt dolore culpa ut laborum. Sint id fugiat ex et ex consequat irure veniam exercitation labore officia non. Irure ut aliquip consequat minim cupidatat magna amet proident aliqua do veniam magna deserunt. Commodo tempor elit id ut sint velit ipsum reprehenderit esse.'
+  `product_details` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

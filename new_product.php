@@ -82,12 +82,12 @@ if (isset($_GET['error'])) {
                     </div>
 
                     <div class="form-wrapper">
-                        <input type="text" id="product_rate" name="product_rate" placeholder="product rate" class="form-control" required>
+                        <input type="text" id="product_rate" name="product_rate" placeholder="product rate" class="form-control" min="0" max="5" required>
                         <i class="fa-solid fa-user"></i>
                     </div>
 
                     <div class="form-wrapper">
-                        <input type="text" id="product_details" name="product_details" placeholder="product details" class="form-control" required>
+                        <input type="text" id="product_details" name="product_details" placeholder="product details" class="form-control">
                         <i class="fa-solid fa-lock"></i>
                     </div>
 
