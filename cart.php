@@ -74,24 +74,7 @@ $result = sql_to_array($sql);
                 </tr>
             </thead>
             <tbody id="tableBody">
-                <!-- 
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="images/products/f2.jpg" alt=""></td>
-                    <td>Catoon Astronaut T-shirts</td>
-                    <td>$118</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="images/products/f3.jpg" alt=""></td>
-                    <td>Catoon Astronaut T-shirts</td>
-                    <td>$118</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118</td>
-                </tr>
-             -->
+
             </tbody>
         </table>
     </section>
