@@ -38,25 +38,25 @@ function head($currentPage)
         <?php
         if (isset($_SESSION['admin'])) {
         ?>
-          <a href="../new_product.php"><button class="normal">Add Product</button></a>
+          <a href="./new_product.php"><button class="normal">Add Product</button></a>
           <br>
         <?php } ?>
-        <a href="../functions/logout.php"><button class="logout">Logout</button></a>
+        <a href="./functions/logout.php"><button class="logout">Logout</button></a>
 
       <?php
 
       } else {
       ?>
-        <p> Please Login Or Register First ...</p> <br>
+        <p> Please Login Or Register First ..</p> <br>
         <div class="row">
-          <a href="../user_login.php"><button style="width: unset;" class="normal">Login</button></a>
-          <a href="../user_register.php"><button style="width: unset;" class="normal">Register</button></a>
+          <a href="./user_login.php"><button style="width: unset;" class="normal">Login</button></a>
+          <a href="./user_register.php"><button style="width: unset;" class="normal">Register</button></a>
         </div>
       <?php  }  ?>
 
     </div>
   </section>
-  <script src="../scripts/script.js"></script>
+  <script src="./scripts/script.js"></script>
 <?php
 }
 ?>
