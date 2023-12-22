@@ -94,7 +94,7 @@ if (isset($_GET['error'])) {
 
 
       // all products
-      $sql2 = "SELECT * FROM products ORDER BY product_id DESC LIMIT 8 ";
+      $sql2 = "SELECT * FROM products ORDER BY product_stars DESC LIMIT 8";
       $all_products = sql_to_array($sql2);
 
       foreach ($all_products as $row) {

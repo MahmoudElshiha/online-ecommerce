@@ -11,7 +11,7 @@ $stmt->bindParam(2, $password);
 
 
 if ($stmt->execute()) {
-    header("Location: ../home.php");
+    header("Location: ../user_login.php");
 } else {
     $error_msg = "Error: " . $stmt->errorInfo()[2];
     header("Location: ../user_register.php?error=$error_msg");

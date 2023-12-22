@@ -193,7 +193,7 @@ body {
   width: 100%;
   border-radius: 20px;
   height: -webkit-fill-available;
-  object-fit: cover;
+  object-fit: contain;
   border-right: 10px groove;
   max-height: 275px;
 }
