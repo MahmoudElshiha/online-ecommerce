@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if the file was uploaded without errors
     if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
-        $targetDir = "../images/products/";
+        $targetDir = "./images/products/";
         $timestamp = time();
         $targetFile = $targetDir . $timestamp . '_' . basename($_FILES["file"]["name"]);
 
